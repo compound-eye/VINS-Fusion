@@ -18,6 +18,7 @@
 #include <sensor_msgs/image_encodings.h>
 #include <visualization_msgs/Marker.h>
 #include <std_msgs/Bool.h>
+#include <boost/filesystem.hpp>
 #include <cv_bridge/cv_bridge.h>
 #include <iostream>
 #include <ros/package.h>
@@ -451,6 +452,7 @@ int main(int argc, char **argv)
 
     fsSettings["image0_topic"] >> IMAGE_TOPIC;        
     fsSettings["pose_graph_save_path"] >> POSE_GRAPH_SAVE_PATH;
+    boost::filesystem::create_directories(POSE_GRAPH_SAVE_PATH);
     fsSettings["output_path"] >> VINS_RESULT_PATH;
     fsSettings["save_image"] >> DEBUG_IMAGE;
 

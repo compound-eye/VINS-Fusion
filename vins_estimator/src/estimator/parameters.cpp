@@ -108,6 +108,13 @@ void readParameters(std::string config_file)
     MIN_PARALLAX = MIN_PARALLAX / FOCAL_LENGTH;
 
     fsSettings["output_path"] >> OUTPUT_FOLDER;
+    // Create output directory if it doesn't exist
+    std::cout << "OUTPUT_FOLDER: " << OUTPUT_FOLDER << std::endl;
+    boost::system::error_code ec;
+    boost::filesystem::create_directories(OUTPUT_FOLDER, ec);
+    if (ec) {
+        std::cerr << "Failed to create output directory: " << ec.message() << std::endl;
+    }
     VINS_RESULT_PATH = OUTPUT_FOLDER + "/vio.csv";
     std::cout << "result path " << VINS_RESULT_PATH << std::endl;
     std::ofstream fout(VINS_RESULT_PATH, std::ios::out);

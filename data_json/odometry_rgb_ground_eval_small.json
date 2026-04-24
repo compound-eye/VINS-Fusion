@@ -1,0 +1,61 @@
+{
+  "notes": "Odometry test collection covering diverse scenarios: on-road (highway, city), off-road, with various motion patterns (turns, straight, standstill starts, moving starts). Datasets selected to stress-test odometry across different speeds, terrains, and motion patterns.",
+  "dataset_groups": [
+    {
+      "description": "Off-road - Big Bear (mountain)",
+      "raw_root": "/host/mnt/nas2/datasets/20240213_big_bear/raw",
+      "recon_root": "",
+      "camera_type": "ERS",
+      "extra_args": [],
+      "datasets": [
+        {
+          "id": "240213-193753",
+          "notes": "Mountain offroad, 9.9 min, median 7.4 m/s, 4.2km"
+        }
+      ]
+    },
+    {
+      "description": "Off-road - Vegas Desert - Diverse patterns",
+      "raw_root": "/host/mnt/nas3/datasets/agx/20250703_Vegas_Offroad_8MP_Boson/raw",
+      "recon_root": "",
+      "camera_type": "ERS",
+      "extra_args": [],
+      "datasets": [
+        {
+          "id": "250701-221233",
+          "notes": "Open desert offroad loop, 19.1 min, median 5.3 m/s, 6.1km"
+        },
+        {
+          "id": "250701-204229",
+          "notes": "Turn-around trail, very slow with long stop (130s), 10.6 min, median 1.8 m/s, 774m"
+        }
+      ]
+    },
+    {
+      "description": "Highway/Freeway - SF area",
+      "raw_root": "/host/mnt/nas3/datasets/agx/20251031_SF/raw",
+      "recon_root": "",
+      "camera_type": "ERS",
+      "extra_args": [],
+      "datasets": [
+        {
+          "id": "251106-212953",
+          "notes": "SF highway, median 24.5 m/s, 20.7km"
+        }
+      ]
+    },
+    {
+      "description": "Urban/City - SF Feb 2026 (challenging for odometry)",
+      "raw_root": "/host/mnt/nas3/datasets/s3/agx-113/raw",
+      "recon_root": "",
+      "camera_type": "ERS",
+      "extra_args": [],
+      "datasets": [
+        {
+          "id": "260202-180712",
+          "notes": "SF, known odometry challenges with some configurations"
+        }
+      ]
+    }
+  ]
+}

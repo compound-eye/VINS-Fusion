@@ -1,4 +1,8 @@
 # VINS-Fusion
+## Comparing VINS-Fusion to CompoundEye VIO2 Method
+
+Refer to `compare_vio2_to_vins_fusion_instructions.md`.
+
 ## An optimization-based multi-sensor state estimator
 
 <img src="https://github.com/HKUST-Aerial-Robotics/VINS-Fusion/blob/master/support_files/image/vins_logo.png" width = 55% height = 55% div align=left />

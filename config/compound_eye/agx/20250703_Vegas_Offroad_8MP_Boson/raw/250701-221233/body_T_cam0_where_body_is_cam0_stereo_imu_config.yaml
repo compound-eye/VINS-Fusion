@@ -1,0 +1,55 @@
+%YAML:1.0
+
+imu: 1
+num_of_cam: 2
+
+imu_topic: "/imu0"
+image0_topic: "/cam0/image_raw"
+image1_topic: "/cam1/image_raw"
+
+cam0_calib: "cam0_pinhole.yaml"
+cam1_calib: "cam1_pinhole.yaml"
+image_width: 1280
+image_height: 384
+
+estimate_extrinsic: 1   # refine around initial guess
+body_T_cam0: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: d
+   data: [1, 2.442230393e-19, -2.386215871e-20, 8.67361738e-18,
+          2.442230393e-19, 1, -1.385059419e-20, -8.67361738e-19,
+          -2.386215871e-20, -1.385059419e-20, 1, 3.469446952e-18,
+          0, 0, 0, 1]
+
+body_T_cam1: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: d
+   data: [1, 2.442230393e-19, -2.386215871e-20, 0.8128000498,
+          2.442230393e-19, 1, -1.385059419e-20, -1.301042607e-18,
+          -2.386215871e-20, -1.385059419e-20, 1, 3.469446952e-18,
+          0, 0, 0, 1]
+
+acc_n: 0.002
+gyr_n: 0.0001
+acc_w: 0.0002
+gyr_w: 0.00001
+g_norm: 9.81007
+
+max_cnt: 200
+min_dist: 25
+freq: 20
+F_threshold: 1.0
+show_track: 0
+flow_back: 1
+
+max_solver_time: 0.04
+max_num_iterations: 8
+keyframe_parallax: 10.0
+
+multiple_thread: 1
+estimate_td: 0
+td: 0.0
+
+output_path: ""
